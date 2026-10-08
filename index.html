@@ -1384,9 +1384,6 @@ function endGame(isWin) {
         bonusText = "🏆 全問正解ボーナス +500pt";
     }
     
-    document.getElementById("perfect-bonus").textContent =
-    bonusText;
-    
     const playTime =
         Math.floor(
             (Date.now() - startTime) / 1000
