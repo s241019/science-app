@@ -724,9 +724,26 @@ function changeScreen(screenId) {
 
 function showRankingScreen(){
 
-    changeScreen("screen-ranking");
+    fetch(
+      "https://script.google.com/macros/s/AKfycbx_08cke11frlnfvyODDuU_-sIiHPQZUHM-CASk5BUH_D2lPz4UFA5NNFVQ6MJ5EEUILg/exec?api=ranking"
+    )
+    .then(response => response.json())
+    .then(data => {
+
+        displayRanking(data);
+
+        changeScreen("screen-ranking");
+
+    })
+    .catch(error => {
+
+        console.error(error);
+        alert("ランキング取得失敗");
+
+    });
 
 }
+    
 function displayRanking(data){
 
   document.getElementById("easy-ranking").innerHTML =
