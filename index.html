@@ -1256,7 +1256,11 @@ function renderTop3(elementId, list) {
             </div>
 
             <div class="ranking-user">
+                <span style="color:${record.aura || '#000'};">
+                    ${record.character || '😀'}
+                </span>
                 ${record.userId}
+                ${record.field}
             </div>
 
             <div class="ranking-score">
