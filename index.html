@@ -1247,7 +1247,7 @@ function renderTop3(elementId, list) {
     let html = "";
 
     list.forEach((record, index) => {
-
+        console.log(record);
         html += `
         <div class="ranking-row">
 
@@ -1270,7 +1270,7 @@ function renderTop3(elementId, list) {
         </div>
         `;
     });
-
+    
     target.innerHTML = html;
 }
 
