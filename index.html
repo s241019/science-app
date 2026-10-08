@@ -890,11 +890,6 @@ console.log(
         
 questions =
     subjectData.questions
-        .filter(
-            q =>
-                q.difficulty ===
-                difficultyName
-        )
         .map(q => ({
 
             q: q.question,
