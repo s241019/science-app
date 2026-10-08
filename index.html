@@ -1029,14 +1029,25 @@ function updateComboDisplay() {
 }
 
 function loadQuestion() {
-    if (monsterHp <= 0) { endGame(true); return; }
-    if (playerHp <= 0) { endGame(false); return; }
-    if (currentQuestionIndex >= questions.length) {
+    
+    if (monsterHp <= 0) {
+    console.log("敵HP終了", monsterHp);
+    endGame(true);
+    return;
+}
+
+if (playerHp <= 0) {
+    console.log("自分HP終了", playerHp);
+    endGame(false);
+    return;
+}
+
+if (currentQuestionIndex >= questions.length) {
 
     console.log(
-      "問題終了",
-      currentQuestionIndex,
-      questions.length
+        "問題終了",
+        currentQuestionIndex,
+        questions.length
     );
 
     endGame(monsterHp <= 0);
@@ -1120,7 +1131,8 @@ function handleAnswer(isCorrect, btn) {
         setTimeout(() => {
             currentQuestionIndex++; updatePlayerStatus(); loadQuestion();
         }, 1500);
-} else {
+} 
+    else {
 
     wrongCount++;
     triggerShake();
