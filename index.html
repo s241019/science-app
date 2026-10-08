@@ -1031,7 +1031,17 @@ function updateComboDisplay() {
 function loadQuestion() {
     if (monsterHp <= 0) { endGame(true); return; }
     if (playerHp <= 0) { endGame(false); return; }
-    if (currentQuestionIndex >= questions.length) { endGame(monsterHp <= 0); return; }
+    if (currentQuestionIndex >= questions.length) {
+
+    console.log(
+      "問題終了",
+      currentQuestionIndex,
+      questions.length
+    );
+
+    endGame(monsterHp <= 0);
+    return;
+}
     
     let qData = questions[currentQuestionIndex];
     let enemy = enemyDatabase[currentField];
