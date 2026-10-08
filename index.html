@@ -1391,6 +1391,12 @@ function endGame(isWin) {
         score += 1000;
     }
 
+    if (wrongCount === 0) {
+
+    score += 500;
+
+    }
+    
     score = Math.max(0, score);
 
 console.log({
