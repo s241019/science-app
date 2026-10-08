@@ -1364,9 +1364,9 @@ function endGame(isWin) {
     score = Math.max(0, score);
 
 console.log({
-  userId: currentUserId,
-  difficulty: selectedDifficulty,
-  field: selectedField,
+  userId: getUserName(),
+  difficulty: selectedDiff,
+  field: currentField,
   playTime: playTime,
   correct: correctCount,
   wrong: wrongCount,
