@@ -1465,6 +1465,12 @@ changeScreen('screen-result');
             "💤";
     }
 
+    let bonusText = "";
+
+    if (wrongCount === 0) {
+        bonusText = "🏆 全問正解ボーナス +500pt";
+    }
+    
     let logHtml = `
     <div style="
         text-align:center;
