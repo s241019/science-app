@@ -1470,12 +1470,42 @@ changeScreen('screen-result');
         margin-bottom:12px;
         color:#3b82f6;
     ">
-        ⏱️ タイム：${playTime}秒<br>
-        ✅ 正解数：${correctCount}問<br>
-        基本スコア ${score}pt<br>
-        ボーナス +${bonus}pt<br>
-        ━━━━━━━━<br>
-        合計 ${score + bonus}pt
+        let logHtml = `
+<div style="
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:12px;
+    color:#3b82f6;
+">
+╔══════════════╗<br>
+🏆 RESULT<br>
+╚══════════════╝<br><br>
+
+⏱ タイム　 ${playTime}秒<br>
+✅ 正解数　 ${correctCount}問<br><br>
+
+══════════════<br><br>
+
+💯 基本スコア　${score}pt<br>
+🎁 全問正解　　+${bonus}pt<br><br>
+
+══════════════<br><br>
+
+🏆 合計<br><br>
+
+<span style="
+    font-size:36px;
+    color:gold;
+    text-shadow:2px 2px 4px black;
+">
+⭐ ${score + bonus}pt ⭐
+</span>
+
+</div>
+
+<div class="result-container">
+`;
         
     </div>
 
