@@ -937,18 +937,12 @@ questions = shuffle(questions);
         monsterMaxHp = 200;
         playerMaxHp = 100;
 
-        questions =
-            questions.slice(0,10);
-
     }
 
     else if (selectedDiff === "normal") {
 
         monsterMaxHp = 300;
         playerMaxHp = 140;
-
-        questions =
-            questions.slice(0,15);
 
     }
 
@@ -957,8 +951,6 @@ questions = shuffle(questions);
         monsterMaxHp = 360;
         playerMaxHp = 160;
 
-        questions =
-            questions.slice(0,20);
     }
 
     currentQuestionIndex = 0;
@@ -1044,14 +1036,11 @@ if (playerHp <= 0) {
 
 if (currentQuestionIndex >= questions.length) {
 
-    console.log(
-        "問題終了",
-        currentQuestionIndex,
-        questions.length
-    );
+    console.log("問題を一周したので先頭へ戻る");
 
-    endGame(monsterHp <= 0);
-    return;
+    currentQuestionIndex = 0;
+    questions = shuffle(questions);
+    
 }
     
     let qData = questions[currentQuestionIndex];
