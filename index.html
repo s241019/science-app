@@ -1363,31 +1363,7 @@ function endGame(isWin) {
 
     score = Math.max(0, score);
 
-google.script.run
-  .withSuccessHandler(function(){
-
-      console.log("保存成功");
-
-  })
-  .withFailureHandler(function(error){
-
-      alert("保存失敗\n" + error.message);
-
-      console.error(error);
-
-  })
-  .savePlayLog({
-
-      userId: getUserName(),
-      difficulty: selectedDiff,
-      field: currentField,
-      playTime: playTime,
-      correct: correctCount,
-      wrong: wrongCount,
-      score: score,
-      result: isWin ? "WIN" : "LOSE"
-
-  });
+console.log("保存成功");
 
     changeScreen('screen-result');
 
