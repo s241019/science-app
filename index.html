@@ -1363,9 +1363,30 @@ function endGame(isWin) {
 
     score = Math.max(0, score);
 
-console.log("保存成功");
+fetch(
+  "https://script.google.com/macros/s/AKfycbx_08cke11frlnfvyODDuU_-sIiHPQZUHM-CASk5BUH_D2lPz4UFA5NNFVQ6MJ5EEUILg/exec",
+  {
+    method: "POST",
+    body: JSON.stringify({
+      userId: currentUserId,
+      difficulty: selectedDifficulty,
+      field: selectedField,
+      playTime: playTime,
+      correct: correctCount,
+      wrong: wrongCount,
+      score: score,
+      result: isWin ? "WIN" : "LOSE"
+    })
+  }
+)
+.then(() => {
+  console.log("保存成功");
+})
+.catch(error => {
+  console.error("保存失敗", error);
+});
 
-    changeScreen('screen-result');
+changeScreen('screen-result');
 
     const logBox =
         document.getElementById('result-log');
