@@ -1395,12 +1395,6 @@ function endGame(isWin) {
     }
 
     const bonus = (wrongCount === 0) ? 500 : 0;
-
-    let bonusText = "";
-
-    if (wrongCount === 0) {
-        bonusText = "🏆 全問正解ボーナス +500pt";
-    }
     
     score = Math.max(0, score);
 
