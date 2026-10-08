@@ -724,23 +724,7 @@ function changeScreen(screenId) {
 
 function showRankingScreen(){
 
-  google.script.run
-    .withSuccessHandler(function(data){
-
-      displayRanking(data);
-
-      changeScreen("screen-ranking");
-
-    })
-    .withFailureHandler(function(error){
-
-      alert(
-        "ランキング取得失敗\n" +
-        error.message
-      );
-
-    })
-    .getRankingData();
+    changeScreen("screen-ranking");
 
 }
 function displayRanking(data){
