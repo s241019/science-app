@@ -1406,7 +1406,8 @@ function endGame(isWin) {
 
     let score =
         (correctCount * 200)
-        - (playTime * 2);
+        - (playTime * 2)
+        - (wrongCount * 100);
 
     if (isWin) {
         score += 1000;
@@ -1439,7 +1440,7 @@ fetch(
       playTime: playTime,
       correct: correctCount,
       wrong: wrongCount,
-      score: score,
+      score: score + bonus,
       character: currentIcon,
       aura: currentAura,
       result: isWin ? "WIN" : "LOSE"
