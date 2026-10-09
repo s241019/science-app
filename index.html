@@ -788,7 +788,8 @@ function createRankingHtml(list){
     html += `
       <div class="rank-row ${cls}">
         <div class="rank-name">
-          ${medal} ${r.userId} ${r.field}
+          ${medal} ${r.character || ""}
+          ${r.userId} ${r.field}
         </div>
 
         <div class="rank-score">
