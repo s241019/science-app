@@ -246,7 +246,7 @@ body {
       }
 
       #game-container{
-          transform: scale(1.05);
+          transform: scale(1);
           transform-origin: top center;
       }
       }
@@ -497,6 +497,10 @@ body {
                     onclick="useHintItem()">
                     🔍 選択肢を1つ消す
                 </button>
+                <button>
+                    消してよい　pullリクしたいだけ
+                </button>
+
 
                 <div id="quiz-options"></div>
             </div>
@@ -729,14 +733,16 @@ function changeScreen(screenId) {
 function showRankingScreen(){
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbx_08cke11frlnfvyODDuU_-sIiHPQZUHM-CASk5BUH_D2lPz4UFA5NNFVQ6MJ5EEUILg/exec"
+      "https://script.google.com/macros/s/AKfycbx_08cke11frlnfvyODDuU_-sIiHPQZUHM-CASk5BUH_D2lPz4UFA5NNFVQ6MJ5EEUILg/exec?api=ranking"
     )
     .then(response => response.json())
     .then(data => {
 
-        displayRanking(data);
+    console.log("取得データ", data);
 
-        changeScreen("screen-ranking");
+    displayAllRankings(data);
+
+    changeScreen("screen-ranking");
 
     })
     .catch(error => {
@@ -1208,6 +1214,8 @@ function getUserName(){
 
 function displayAllRankings(data) {
 
+    console.log("ランキングデータ", data);
+    
     renderTop3(
       "easy-ranking",
       data.easy || []
@@ -1228,6 +1236,8 @@ function displayAllRankings(data) {
 
 function renderTop3(elementId, list) {
 
+    console.log(elementId, list);
+    
     const target =
         document.getElementById(elementId);
 
