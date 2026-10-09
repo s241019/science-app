@@ -1208,6 +1208,8 @@ function getUserName(){
 
 function displayAllRankings(data) {
 
+    console.log("ランキングデータ", data);
+    
     renderTop3(
       "easy-ranking",
       data.easy || []
@@ -1228,6 +1230,8 @@ function displayAllRankings(data) {
 
 function renderTop3(elementId, list) {
 
+    console.log(elementId, list);
+    
     const target =
         document.getElementById(elementId);
 
