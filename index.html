@@ -734,9 +734,11 @@ function showRankingScreen(){
     .then(response => response.json())
     .then(data => {
 
-        displayAllRankings(data);
+    console.log("取得データ", data);
 
-        changeScreen("screen-ranking");
+    displayAllRankings(data);
+
+    changeScreen("screen-ranking");
 
     })
     .catch(error => {
