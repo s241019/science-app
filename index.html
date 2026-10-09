@@ -206,17 +206,16 @@ body {
         }
 
         .rank-row{
-          display:flex;
-          justify-content:space-between;
-          align-items:center;
-          padding:10px;
-          margin:5px 0;
-          border-radius:10px;
-          background:#f8fafc;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:8px 0;
         }
 
         .rank-name{
-          font-weight:bold;
+            display:flex;
+            align-items:center;
+            gap:8px;
         }
 
         .rank-score{
@@ -786,17 +785,19 @@ function createRankingHtml(list){
     }
 
     html += `
-      <div class="rank-row ${cls}">
-        <div class="rank-name">
-          ${medal} ${r.character || ""}
-          ${r.userId} ${r.field}
+        <div class="rank-row ${cls}">
+            <div class="rank-name">
+                ${medal}
+                ${r.character || ""}
+                ${r.userId}
+                ${r.field}
+            </div>
+        
+            <div class="rank-score">
+                ${r.score}pt
+            </div>
         </div>
-
-        <div class="rank-score">
-          ${r.score}pt
-        </div>
-      </div>
-    `;
+        `;
   });
 
   return html;
