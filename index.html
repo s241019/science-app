@@ -734,7 +734,7 @@ function showRankingScreen(){
     .then(response => response.json())
     .then(data => {
 
-        displayRanking(data);
+        displayAllRankings(data);
 
         changeScreen("screen-ranking");
 
@@ -1426,7 +1426,7 @@ console.log({
 });
     
 fetch(
-  "https://script.google.com/macros/s/AKfycbx_08cke11frlnfvyODDuU_-sIiHPQZUHM-CASk5BUH_D2lPz4UFA5NNFVQ6MJ5EEUILg/exec",
+  "https://script.google.com/macros/s/AKfycbx_08cke11frlnfvyODDuU_-sIiHPQZUHM-CASk5BUH_D2lPz4UFA5NNFVQ6MJ5EEUILg/exec?action=ranking",
   {
     method: "POST",
     body: JSON.stringify({
