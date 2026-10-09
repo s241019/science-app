@@ -589,29 +589,11 @@ function renderTop3(elementId, list) {
 
         html += `
         <div class="ranking-row">
-
-            <div class="ranking-position">
-                ${medals[index]}
-            </div>
-
-            <div class="ranking-user">
-                <span style="color:${record.aura || '#000'};">
-                    ${record.character || '😀'}
-                </span>
-                ${record.userId}
-                ${record.field}
-            </div>
-
-            <div class="ranking-score">
-                ${record.score}pt
-            </div>
-
-            <div class="ranking-detail">
-                ${record.correct || 0}問正解
-                <br>
-                ${record.playTime || 0}秒
-            </div>
-
+            <div>${medals[index]}</div>
+            <div>${record.character || ""}</div>
+            <div>${record.userId}</div>
+            <div>${record.field}</div>
+            <div class="ranking-score">${record.score}pt</div>
         </div>
         `;
     });
