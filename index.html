@@ -190,6 +190,13 @@ body {
 
         /* ランキング画面 */
 
+        .ranking-header{
+            font-weight:bold;
+            border-bottom:1px solid #ccc;
+            margin-bottom:6px;
+            padding-bottom:6px;
+        }
+        
         .ranking-card{
           background:#ffffff;
           border-radius:15px;
@@ -1254,23 +1261,25 @@ function renderTop3(elementId, list) {
         console.log(record);
         html += `
         <div class="ranking-row">
-
-            <div class="ranking-position">
-                ${medals[index]}
+        
+            <div>${medals[index]}</div>
+        
+            <div>
+                ${record.character || "😀"}
             </div>
-
-            <div class="ranking-user">
-                <span style="color:${record.aura || '#000'};">
-                    ${record.character || '😀'}
-                </span>
+        
+            <div>
                 ${record.userId}
+            </div>
+        
+            <div>
                 ${record.field}
             </div>
-
+        
             <div class="ranking-score">
                 ${record.score}pt
             </div>
-
+        
         </div>
         `;
     });
